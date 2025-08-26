@@ -1,3 +1,12 @@
 <pre>
+    const form = document.getElementById("tempForm");
+    const input = document.getElementById("tempInput");
+    const result = document.getElementById("result");
 
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const temp = Number(input.value);
+        const message = temp > 25 ? "It's hot today!" : "It's cool today!"
+        result.textContent = message;
+    });
 </pre>

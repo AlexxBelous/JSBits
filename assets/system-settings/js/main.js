@@ -14,3 +14,19 @@ toggleButton.addEventListener('click', () => {
 });
 
 
+const btn = document.getElementById('copy-btn');
+const code = document.querySelector('.answers');
+const msg = document.getElementById('copy-msg');
+
+btn.addEventListener('click', () => {
+    const text = code.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        msg.style.display = 'block';
+        setTimeout(() => {
+            msg.style.display = 'none';
+        }, 2000); // сообщение исчезнет через 2 секунды
+    });
+});
+
+
+
