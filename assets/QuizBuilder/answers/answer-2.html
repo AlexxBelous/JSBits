@@ -1,0 +1,18 @@
+<pre>
+
+         const form = document.getElementById("numForm");
+         const input = document.getElementById("numInput");
+         const output = document.getElementById("output");
+
+         form.addEventListener("submit", (e) => {
+             e.preventDefault(); // Отменяем перезагрузку страницы
+
+             const num = Number(input.value);
+
+             // Используем оператор &&
+             num && (output.textContent = `You entered: ${num}`);
+
+             // Если num = 0, текст не будет установлен
+         });
+
+</pre>
