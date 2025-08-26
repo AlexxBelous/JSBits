@@ -1,0 +1,115 @@
+code.answers {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+code.answers.visible {
+    display: block;
+    opacity: 1;
+}
+
+#toggleAnswers {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#toggleAnswers:hover {
+    background: #0056b3;
+}
+
+:root {
+    --bg: #f8fafc;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #3b82f6;
+    --radius: 0.75rem;
+    --pad: 1rem;
+    --gap: 1.5rem;
+    --code-bg: #1e293b;
+    --code-text: #f1f5f9;
+    --code-border: #334155;
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+}
+
+/* Вопрос */
+.questions {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--gap);
+    padding: var(--pad);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+}
+
+/* Разметка с возможными тегами */
+.markups {
+    padding: var(--pad);
+    margin-bottom: var(--gap);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.markups h1,
+.markups h2,
+.markups h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.markups p {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.markups div,
+.markups form {
+    margin-bottom: 1rem;
+}
+
+/* Ответ (код) */
+.answers {
+    display: block;
+    padding: var(--pad);
+    margin-top: var(--gap);
+    background: var(--code-bg);
+    color: var(--code-text);
+    font-family: monospace;
+    font-size: 0.95rem;
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius);
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+}
+
+/* Кнопка переключения */
+#toggleAnswers {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+#toggleAnswers:hover {
+    background: #2563eb;
+}
