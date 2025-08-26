@@ -1,0 +1,7 @@
+<pre>
+    const task1 = [1, 2, 3];
+    const master = [3, 4, 5];
+    const merged = [...new Set([...master, ...task1])];
+    const resultEl = document.getElementById("result");
+    resultEl.textContent = `Merged array: ${merged.join(', ')}`;
+</pre>
