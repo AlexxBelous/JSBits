@@ -1,0 +1,19 @@
+<pre>
+    const numInput = document.getElementById("numInput");
+    const truncBtn = document.getElementById("truncBtn");
+    const result = document.getElementById("result");
+
+truncBtn.addEventListener("click", () => {
+    const num = parseFloat(numInput.value);
+
+    if (isNaN(num)) {
+        result.textContent = "Введите корректное число!";
+        result.style.color = "red";
+        return;
+    }
+
+    const truncated = Math.trunc(num);
+    result.textContent = `До: ${num} - После удаления дробной части: ${truncated}`;
+    result.style.color = "darkblue";
+});
+</pre>
