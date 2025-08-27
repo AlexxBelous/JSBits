@@ -1,0 +1,22 @@
+<pre>
+    const rollBtn = document.getElementById("rollBtn");
+    const historyList = document.getElementById("historyList");
+    const averageDiv = document.getElementById("average");
+
+const rolls = [];
+
+rollBtn.addEventListener("click", () => {
+    // Генерируем число 1–6
+    const roll = Math.floor(Math.random() * 6) + 1;
+    rolls.push(roll);
+
+    const li = document.createElement("li");
+    li.textContent = `Бросок ${rolls.length}: ${roll}`;
+    historyList.appendChild(li);
+
+    // Вычисляем среднее
+    const sum = rolls.reduce((acc, val) => acc + val, 0);
+    const avg = sum / rolls.length;
+    averageDiv.textContent = `Среднее значение бросков: ${avg.toFixed(2)}`;
+});
+</pre>
