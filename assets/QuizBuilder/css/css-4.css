@@ -1,0 +1,9 @@
+input, select, button {
+    margin: 5px 0;
+    padding: 8px;
+    font-size: 14px;
+}
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+}
