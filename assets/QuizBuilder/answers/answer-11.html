@@ -1,0 +1,21 @@
+<pre>
+    const throwBtn = document.getElementById("throwBtn");
+    const throwList = document.getElementById("throwList");
+    const maxResult = document.getElementById("maxResult");
+
+const throws = [];
+
+throwBtn.addEventListener("click", () => {
+    let randomScore = Math.random() * 10; // 0 до 10
+    let roundedScore = Math.round(randomScore);
+
+    throws.push(roundedScore);
+
+    const li = document.createElement("li");
+    li.textContent = `Бросок ${throws.length}: ${roundedScore} очков`;
+    throwList.appendChild(li);
+
+    const maxScore = Math.max(...throws);
+    maxResult.textContent = `Максимальный бросок: ${maxScore}`;
+});
+</pre>
