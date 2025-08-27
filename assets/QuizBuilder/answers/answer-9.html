@@ -1,0 +1,35 @@
+<pre>
+    const priceInput = document.getElementById("priceInput");
+    const addBtn = document.getElementById("addBtn");
+    const ceilBtn = document.getElementById("ceilBtn");
+    const priceList = document.getElementById("priceList");
+
+    const prices = [];
+
+addBtn.addEventListener("click", () => {
+    let price = parseFloat(priceInput.value);
+    if (isNaN(price)) {
+        alert("Введите корректное число!");
+        return;
+    }
+
+    prices.push(price);
+
+    const li = document.createElement("li");
+    li.textContent = price.toFixed(2) + " грн";
+    priceList.appendChild(li);
+
+    priceInput.value = "";
+    priceInput.focus();
+});
+
+ceilBtn.addEventListener("click", () => {
+    const items = priceList.querySelectorAll("li");
+
+    prices.forEach((price, index) => {
+        const rounded = Math.ceil(price);
+        items[index].textContent = rounded + " грн";
+        prices[index] = rounded; // обновляем массив для будущих операций
+    });
+});
+</pre>
