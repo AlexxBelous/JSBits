@@ -1,0 +1,25 @@
+<pre>
+    document.getElementById("checkBtn").addEventListener("click", function () {
+    const ageInput = document.getElementById("age").value;
+    const account = document.getElementById("account").value;
+    const result = document.getElementById("result");
+
+    // Проверка, ввёл ли пользователь возраст
+    if (ageInput === "") {
+        result.textContent = "Please enter your age";
+        result.style.color = "orange";
+        return;
+    }
+
+    const age = parseInt(ageInput, 10);
+
+    // Основная проверка с && и ===
+    if (age >= 18 && account === "yes") {
+        result.textContent = "Access granted";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Access denied";
+        result.style.color = "red";
+    }
+});
+</pre>
