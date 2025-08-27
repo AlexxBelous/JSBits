@@ -113,3 +113,17 @@ body {
 #toggleAnswers:hover {
     background: #2563eb;
 }
+
+
+#copy-msg {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0.9;
+}
