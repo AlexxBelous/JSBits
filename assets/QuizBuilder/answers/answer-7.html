@@ -1,0 +1,36 @@
+<pre>
+    const priceInput = document.getElementById("priceInput");
+    const addBtn = document.getElementById("addBtn");
+    const findMinBtn = document.getElementById("findMinBtn");
+    const priceList = document.getElementById("priceList");
+    const result = document.getElementById("result");
+
+    const prices = [];
+
+    addBtn.addEventListener("click", () => {
+    let price = parseFloat(priceInput.value);
+    if (isNaN(price)) {
+        alert("Введите корректное число!");
+        return;
+    }
+    prices.push(price);
+
+    const li = document.createElement("li");
+    li.textContent = price.toFixed(2) + " грн";
+    priceList.appendChild(li);
+
+    priceInput.value = "";
+    priceInput.focus();
+});
+
+findMinBtn.addEventListener("click", () => {
+    if (prices.length === 0) {
+        result.textContent = "Список цен пуст!";
+        result.style.color = "red";
+        return;
+    }
+    const minPrice = Math.min(...prices);
+    result.textContent = `Минимальная цена: ${minPrice.toFixed(2)} грн`;
+    result.style.color = "darkblue";
+});
+</pre>
