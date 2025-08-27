@@ -1,0 +1,11 @@
+<pre>
+    const button = document.getElementById("roundPricesBtn");
+    const prices = document.querySelectorAll(".price");
+
+    button.addEventListener("click", () => {
+    prices.forEach(priceEl => {
+        let num = parseFloat(priceEl.textContent);
+        priceEl.textContent = num.toPrecision(3);
+    });
+});
+</pre>
