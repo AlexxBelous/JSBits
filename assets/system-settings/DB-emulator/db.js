@@ -1,5 +1,1 @@
-export const users = [
-    { name: 'Alex', age: 20 },
-    { name: 'John', age: 25 },
-    { name: 'Kate', age: 17 }
-];
+export const signalTimestamps = ["23:00","04:22","18:05","06:24"];

@@ -1,0 +1,45 @@
+<pre id="code">
+function solve(arr) {
+    const MINUTES_IN_DAY = 1440;
+
+     <span class="comment">// 1. Убираем дубликаты</span>
+    const uniqueTimes = [...new Set(arr)];
+
+    <span class="comment">// 2. Переводим в минуты</span>
+    const minutes = uniqueTimes.map(time => {
+        const [h, m] = time.split(":").map(Number);
+        return h * 60 + m;
+    });
+
+    <span class="comment">// 3. Сортируем</span>
+    minutes.sort((a, b) => a - b);
+
+    let maxGap = 0;
+
+    <span class="comment">// 4. Разницы между соседними будильниками</span>
+    for (let i = 0; i < minutes.length - 1; i++) {
+        const gap = minutes[i + 1] - minutes[i] - 1;
+        maxGap = Math.max(maxGap, gap);
+    }
+
+    <span class="comment">// 5. Разница через полночь</span>
+    const nightGap = (MINUTES_IN_DAY - minutes[minutes.length - 1] + minutes[0]) - 1;
+    maxGap = Math.max(maxGap, nightGap);
+
+    <span class="comment">// 6. Форматируем ответ в HH:MM</span>
+    const hours = String(Math.floor(maxGap / 60)).padStart(2, "0");
+    const mins = String(maxGap % 60).padStart(2, "0");
+
+    return `${hours}:${mins}`;
+}
+
+    <span class="comment">// Примеры</span>
+solve(["14:51"])
+    <span class="comment">// → "23:59"</span>
+
+
+solve(["23:00","04:22","18:05","06:24"])
+    <span class="comment">// → "11:40"</span>
+
+    console.log(solve(signalTimestamps));
+</pre>

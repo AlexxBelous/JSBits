@@ -126,3 +126,16 @@ body {
     font-size: 14px;
     opacity: 0.9;
 }
+
+.code {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: monospace;
+}
+
+.comment {
+    color: red;
+    font-style: italic;
+}
