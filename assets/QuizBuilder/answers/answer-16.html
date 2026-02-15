@@ -1,0 +1,31 @@
+<pre>
+const list = document.getElementById("list");
+const originalItems = Array.from(list.children);
+
+function limitDOMList(n) {
+    const counts = new Map();
+
+    originalItems.forEach(item => {
+    <span class="comment">// Получаем идентификатор места</span>
+        const id = item.dataset.id;
+    <span class="comment">// Сколько раз уже встречался</span>
+        const count = counts.get(id) || 0;
+
+        if (count < n) {
+            counts.set(id, count + 1);
+    <span class="comment">// показываем элемент</span>
+            item.classList.remove("hidden");
+        } else {
+     <span class="comment">// скрываем лишний</span>
+            item.classList.add("hidden");
+        }
+    });
+}
+
+document.getElementById("apply").addEventListener("click", () => {
+    <span class="comment">// Читаем лимит из input</span>
+    const n = Number(document.getElementById("limit").value);
+    <span class="comment">// Применяем фильтр к списку</span>
+    limitDOMList(n);
+});
+</pre>

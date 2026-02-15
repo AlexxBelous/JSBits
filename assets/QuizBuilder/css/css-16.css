@@ -1,0 +1,30 @@
+
+#list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#list li {
+    background-color: #f0f8ff;
+    border: 1px solid #cce;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    transition: opacity 2s ease, transform 2s ease, max-height 2s ease, margin 2s ease, padding 2s ease;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+
+#list li.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+}
