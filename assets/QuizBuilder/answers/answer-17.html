@@ -1,0 +1,37 @@
+<pre>
+<span class="comment">// 1. Получаем элементы</span>
+const products = document.querySelectorAll(".product");
+const resultEl = document.getElementById("result");
+
+<span class="comment">// 2. Функция парсинга диапазона цен</span>
+function parsePriceRange(rangeString) {
+    const [min, max] = rangeString
+        .split("-")
+        .map(Number);
+
+    return { min, max };
+}
+
+<span class="comment">// 3. Функция расчёта средней цены</span>
+function calculateAverage(min, max) {
+    return (min + max) / 2;
+}
+
+<span class="comment">// 4. Рендер</span>
+function renderProductAverages(products) {
+    products.forEach(product => {
+        const { price } = product.dataset;
+
+        const { min, max } = parsePriceRange(price);
+        const average = calculateAverage(min, max);
+
+        const line = document.createElement("div");
+        line.textContent = `${product.textContent}: ${average}`;
+
+        resultEl.appendChild(line);
+    });
+}
+
+<span class="comment">// 5. Запуск</span>
+renderProductAverages(products);
+</pre>
