@@ -1,0 +1,27 @@
+<pre>
+<span class="comment">// 1. Назначаем обработчик клика на кнопку</span>
+document.getElementById("checkBtn").addEventListener("click", () => {
+
+    <span class="comment">// 2. Получаем случайный массив из DB</span>
+    const numbers = randomNumberSet();
+
+    <span class="comment">// 3. Выводим массив на страницу</span>
+    document.getElementById("array").textContent = numbers.join(", ");
+
+    <span class="comment">// 4. Проверяем, отсортирован ли массив</span>
+    let isSorted = true;
+
+    for (let i = 0; i < numbers.length - 1; i++) {
+        <span class="comment">// 4.1. Если текущий элемент больше следующего — массив не отсортирован</span>
+        if (numbers[i] > numbers[i + 1]) {
+            isSorted = false;
+            break;
+        }
+    }
+
+    <span class="comment">// 5. Выводим результат проверки на страницу</span>
+    document.getElementById("result").textContent = isSorted
+        ? "Array is sorted"
+        : "Array is not sorted";
+});
+</pre>
