@@ -31,3 +31,18 @@ const arrays = [arr1, arr2, arr3, arr4];
 export function randomNumberSet() {
     return arrays[Math.floor(Math.random() * arrays.length)];
 }
+
+
+
+// Короткие массивы
+const shortArr1 = [1,2,3,4,5,6];
+const shortArr2 = [2,3,5,6,7];
+const shortArr3 = [10,11,13,14];
+const shortArr4 = [3,1,4,2,5];
+
+const shortArrays = [shortArr1, shortArr2, shortArr3, shortArr4];
+
+// Экспортируем функцию, чтобы можно было импортировать в task-19.js
+export function randomNumber() {
+    return shortArrays[Math.floor(Math.random() * shortArrays.length)];
+}

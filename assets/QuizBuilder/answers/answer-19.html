@@ -1,0 +1,35 @@
+<pre>
+<span class="comment">// 1. Получаем элементы из DOM</span>
+const list = document.getElementById("list");
+const checkBtn = document.getElementById("checkBtn");
+
+<span class="comment">// 2. Создаем функцию для проверки последовательности</span>
+function runCheck() {
+    <span class="comment">// 2.1. Очищаем предыдущий список</span>
+    list.innerHTML = "";
+
+    <span class="comment">// 2.2. Получаем случайный массив чисел</span>
+    const numbers = randomNumber();
+
+    <span class="comment">// 2.3. Создаем элементы списка для каждого числа</span>
+    numbers.forEach(num => {
+        const li = document.createElement("li");
+        li.textContent = num;
+        list.appendChild(li);
+    });
+
+    <span class="comment">// 2.4. Получаем все элементы li для дальнейшей проверки</span>
+    const items = Array.from(list.children);
+
+    <span class="comment">// 2.5. Проверяем, идут ли числа подряд</span>
+    for (let i = 1; i < numbers.length; i++) {
+        <span class="comment">// Если текущее число не на 1 больше предыдущего — подсвечиваем</span>
+        if (numbers[i] !== numbers[i-1] + 1) {
+            items[i].classList.add("unsorted");
+        }
+    }
+}
+
+<span class="comment">// 3. Назначаем обработчик клика на кнопку</span>
+checkBtn.addEventListener("click", runCheck);
+</pre>
